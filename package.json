@@ -1,0 +1,79 @@
+{
+  "name": "react-native-dev-button",
+  "version": "1.0.0",
+  "description": "Un bouton flottant de développement avec menu d'actions pour React Native",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "files": [
+    "lib",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf lib coverage",
+    "prepare": "npm run clean && npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --coverage --ci --watchAll=false",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "type-check": "tsc --noEmit",
+    "validate": "npm run lint && npm run type-check && npm run test:ci",
+    "example": "cd example && npm start",
+    "prepack": "npm run validate && npm run build",
+    "release": "npm run validate && npm run build && npm publish"
+  },
+  "keywords": [
+    "react-native",
+    "development",
+    "debugging",
+    "floating-button",
+    "dev-menu",
+    "storage",
+    "asyncstorage",
+    "typescript"
+  ],
+  "author": "Jtech237 <guttierez237@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtech237/react-native-dev-menu-button.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jtech237/react-native-dev-menu-button/issues"
+  },
+  "homepage": "https://github.com/jtech237/react-native-dev-menu-button#readme",
+  "peerDependencies": {
+    "@react-native-async-storage/async-storage": ">=1.0.0",
+    "react": ">=16.8.0",
+    "react-native": ">=0.60.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^13.2.0",
+    "@types/react": "^19.1.8",
+    "@types/react-native": "^0.72.8",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "babel-jest": "^30.0.5",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-native": "^5.0.0",
+    "jest": "^30.0.5",
+    "metro-react-native-babel-preset": "^0.77.0",
+    "prettier": "^3.6.2",
+    "react": "^19.1.0",
+    "react-native": "^0.80.1",
+    "react-test-renderer": "^19.1.0",
+    "typescript": "^5.8.3"
+  }
+}
